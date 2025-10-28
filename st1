@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html lang="en"></html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>RESUME</h1><b>
+        <hr>
+    <h2>PRAKHAR TIWARI</h2>
+    <hr>
+</h2>ADRESS</h2><b>
+<p>174/A,J-BLOCK,VIJAY NAGAR </p><i>
+<p>GHAZIABAD,U.P,INDIA</p>  
+<p>PIN-201009</p>
+<h3>QULIFICATION</h3>
+<hr>
+<p>10th passed from DAV PUBLIC SCHOOL, Ghaziabad in 2023 with 87%</p>
+<p>12th passed from DAV PUBLIC SCHOOL, Ghaziabad in 2025 with 78%</p>
+<p>Currently pursuing B.Tech from ABES, GHAZIABAD</p>
+<h4>HOOBIES</h4>
+<hr>
+<p>Playing football</p>
+<p>watching movies</p>
+
+<table border="2" >
+    <tr>
+        <th>PHONE NO 7982475702</th>
+    
+    
+        <th>EMAIL ID prakharti123@gmail .com</th>
+    
+        
+
+
+     </body>
