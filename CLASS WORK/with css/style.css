@@ -1,0 +1,69 @@
+body {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "section aside"
+        "article aside"
+        "footer footer";
+    grid-template-columns: 3fr 1fr; /* Adjust as needed */
+    grid-template-rows: auto auto 1fr 1fr auto; /* Adjust as needed */
+    gap: 10px;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+header,
+nav,
+section,
+article,
+aside,
+footer {
+    background-color: lightpink;
+    border: 1px solid palevioletred;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+section {
+    grid-area: section;
+}
+
+article {
+    grid-area: article;
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+}
+
+
+h1 {
+    text-align: center;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.6em;
+    letter-spacing: 0.5px;
+    margin-top: 40px;
+}
+
+h1:first-of-type {
+    font-size: 2.5em;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 50px;
+}

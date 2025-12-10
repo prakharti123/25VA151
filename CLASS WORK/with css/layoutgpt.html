@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Page Layout — Logo / Banner / Boxes</title>
+  <style>
+    :root{
+      --content-width: 960px;
+      --gap: 22px;
+      --panel-bg: #d1d1d1;
+      --page-bg: #f5f5f7;
+      --text-color: #222;
+      --accent: #bfbfbf;
+      --container-pad: 28px;
+      --radius: 6px;
+    }
+
+    /* Page */
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--page-bg);
+      color: var(--text-color);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Center wrapper and background side strips */
+    .page {
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding: 40px 20px;
+      box-sizing:border-box;
+      position:relative;
+    }
+
+    .content-wrap{
+      width:100%;
+      max-width: var(--content-width);
+      background: white;
+      padding: var(--container-pad);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      box-sizing:border-box;
+      position:relative;
+    }
+
+    /* vertical "Background" labels on both sides */
+    .side-label{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%) rotate(-90deg);
+      transform-origin:center;
+      font-size:18px;
+      color: rgba(0,0,0,0.25);
+      letter-spacing:6px;
+      pointer-events:none;
+      user-select:none;
+    }
+    .side-label.left{
+      left: calc( (100vw - var(--content-width))/2 - 18px );
+    }
+    .side-label.right{
+      right: calc( (100vw - var(--content-width))/2 - 18px );
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    /* Header row: logo left, nav right */
+    header.site-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:var(--gap);
+      margin-bottom:18px;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:700;
+      font-size:20px;
+    }
+    .logo .brand-box{
+      width:52px;
+      height:34px;
+      background:var(--panel-bg);
+      border-radius:6px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:#333;
+    }
+    nav.main-nav{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      font-weight:600;
+      color:#444;
+    }
+    nav.main-nav a{
+      text-decoration:none;
+      color:inherit;
+      padding:8px 10px;
+      border-radius:6px;
+    }
+
+    /* Banner */
+    .banner{
+      background: var(--panel-bg);
+      border-radius: var(--radius);
+      padding:30px;
+      text-align:center;
+      font-size:22px;
+      font-weight:600;
+      margin-bottom: var(--gap);
+    }
+
+    /* Intro text area */
+    .intro{
+      background: var(--panel-bg);
+      border-radius: var(--radius);
+      padding:20px;
+      text-align:center;
+      font-weight:600;
+      margin-bottom: var(--gap);
+      font-size:18px;
+    }
+
+    /* Three boxes area */
+    .three-boxes{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:20px;
+      margin-bottom: var(--gap);
+      align-items:start;
+    }
+    .box{
+      background: var(--panel-bg);
+      border-radius:8px;
+      min-height:220px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:22px;
+    }
+
+    /* Footer */
+    footer.site-footer{
+      background: var(--panel-bg);
+      border-radius: var(--radius);
+      padding:14px;
+      text-align:center;
+      font-weight:600;
+      font-size:18px;
+      margin-top:8px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width:900px){
+      .three-boxes{
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .side-label.left, .side-label.right{
+        display:none;
+      }
+    }
+    @media (max-width:640px){
+      header.site-header{
+        flex-direction:column;
+        align-items:stretch;
+        gap:12px;
+      }
+      .three-boxes{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Small utility to visually match image spacing */
+    .spacer{
+      height:12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- left / right vertical background labels -->
+    <div class="side-label left">Background</div>
+    <div class="side-label right">Background</div>
+
+    <main class="content-wrap" role="main" aria-labelledby="page-title">
+      <header class="site-header">
+        <div class="logo" aria-hidden="true">
+          <div class="brand-box">Logo</div>
+          <div class="brand-name">BrandName</div>
+        </div>
+
+        <nav class="main-nav" aria-label="Primary navigation">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </nav>
+      </header>
+
+      <section class="banner" id="page-title">
+        Header / Banner
+      </section>
+
+      <section class="intro">
+        Intro Text Area
+      </section>
+
+      <section class="three-boxes" aria-label="Highlights">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+      </section>
+
+      <footer class="site-footer">
+        Footer
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
