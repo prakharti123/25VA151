@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Bars and Boxes Layout</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    width: 80%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  /* Common box style */
+  .box {
+    background-color: #bfbfbf;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    color: #111;
+  }
+
+  /* Top section: 3 horizontal bars stacked */
+  .top-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .top-bars .bar {
+    height: 40px;
+    line-height: 40px;
+  }
+
+  /* Middle section: 3 vertical rectangles side by side */
+  .middle-boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .middle-boxes .vertical {
+    flex: 1;
+    height: 200px;
+    line-height: 200px;
+  }
+
+  /* Bottom bar */
+  .bottom-bar {
+    width: 90%;
+    height: 40px;
+    line-height: 40px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top three horizontal bars -->
+    <div class="top-bars">
+      <div class="box bar">Top Bar 1</div>
+      <div class="box bar">Top Bar 2</div>
+      <div class="box bar">Top Bar 3</div>
+    </div>
+
+    <!-- Middle three vertical rectangles -->
+    <div class="middle-boxes">
+      <div class="box vertical">Box 1</div>
+      <div class="box vertical">Box 2</div>
+      <div class="box vertical">Box 3</div>
+    </div>
+
+    <!-- Bottom horizontal bar -->
+    <div class="box bottom-bar">Bottom Bar</div>
+
+  </div>
+
+</body>
+</html>
